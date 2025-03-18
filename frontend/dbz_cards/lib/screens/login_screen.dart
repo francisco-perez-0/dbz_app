@@ -48,10 +48,10 @@ class _LoginScreenState extends State<LoginScreen> {
               children: [
                 TextField(controller: _usernameController, decoration: InputDecoration(
                   enabledBorder: UnderlineInputBorder(
-                      borderSide: BorderSide(color: Colors.grey), // Color cuando no está seleccionado
+                      borderSide: BorderSide(color: Colors.grey),
                     ),
                     focusedBorder: UnderlineInputBorder(
-                      borderSide: BorderSide(color: Colors.amber), // Color cuando está seleccionado
+                      borderSide: BorderSide(color: Colors.amber),
                     ),
                   icon: Icon(
                     Icons.person,
@@ -64,10 +64,10 @@ class _LoginScreenState extends State<LoginScreen> {
                 TextField(controller: _passwordController, decoration:
                   InputDecoration(
                     enabledBorder: UnderlineInputBorder(
-                      borderSide: BorderSide(color: Colors.grey), // Color cuando no está seleccionado
+                      borderSide: BorderSide(color: Colors.grey),
                     ),
                     focusedBorder: UnderlineInputBorder(
-                      borderSide: BorderSide(color: Colors.amber), // Color cuando está seleccionado
+                      borderSide: BorderSide(color: Colors.amber),
                     ),
                     icon: Icon(
                       Icons.password,

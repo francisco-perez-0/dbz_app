@@ -22,7 +22,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
   void _loadProfile() async {
     try {
-      final user = await _authService.getProfile(44); // Cambia 44 por el ID real o usa "me"
+      final user = await _authService.getProfile(44);
       setState(() => _user = user);
     } catch (e) {
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(e.toString())));
@@ -32,13 +32,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
   void _addCard() async {
     setState(() => _isLoading = true);
     try {
-      // ID de la carta fija (cambialo por un id_card válido de tu DB)
-      const cardId = 1; // Ejemplo, ajustá según tu base de datos
+      const cardId = 1;
 
-      // Llamar al endpoint savecard
+
       await _authService.saveCard(cardId);
 
-      // Mostrar mensaje de éxito
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text('Card added to your collection!')),
       );
@@ -60,7 +58,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
           IconButton(
             icon: const Icon(Icons.logout),
             onPressed: () {
-              // Lógica de logout aquí
             },
           ),
         ],

@@ -19,7 +19,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
         _passwordController.text,
         _emailController.text,
       );
-      Navigator.pop(context); // Volver a login
+      Navigator.pop(context);
     } catch (e) {
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(e.toString())));
     }
