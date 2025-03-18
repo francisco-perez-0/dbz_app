@@ -2,7 +2,6 @@ import 'dart:convert';
 import 'dart:ffi';
 
 import 'package:dbz_cards/models/user.dart';
-import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -61,9 +60,11 @@ class AuthService {
     if (response.statusCode == 200) {
       final data = jsonDecode(response.body);
       String token = data['token'];
+      String id = data['id'];
       // Guardar token localmente
       final prefs = await SharedPreferences.getInstance();
       await prefs.setString('token', token);
+      await prefs.setInt("id", int.parse(id));
       return token;
     } else {
       throw Exception('Error al loguear: ${response.body}');
